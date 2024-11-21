@@ -27,6 +27,7 @@ public:
 
   void addSnakesLadders(int numLadder, int numSnakes)
   {
+    srand(time(0));
     int totalCells = board.size() * board.size();
 
     for (int i = 0; i < numLadder; i++)
@@ -37,7 +38,7 @@ public:
       if (temp_start >= temp_end)
         continue;
 
-      Cell *current_cell = getCell(temp_start, board.size());      
+      Cell *current_cell = getCell(temp_start, board.size());
       current_cell->jump = new Jump(temp_start, temp_end);
     }
 
@@ -49,12 +50,12 @@ public:
       if (temp_start <= temp_end)
         continue;
 
-      Cell *current_cell = getCell(temp_start, board.size());      
+      Cell *current_cell = getCell(temp_start, board.size());
       current_cell->jump = new Jump(temp_start, temp_end);
     }
   }
 
-  Cell* getCell(int start, int n)
+  Cell *getCell(int start, int n)
   {
     int x = start / 10;
     int y = start % 10;
