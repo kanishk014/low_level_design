@@ -1,17 +1,22 @@
 #pragma once
 #include <bits/stdc++.h>
 
-class Dice {
-  public:  
+class Dice
+{
+public:
   int count;
 
-  Dice (int count) {
+  Dice(int count)
+  {
     this->count = count;
   }
 
-  int rollDice() {
+  int rollDice()
+  {
     int sum = 0;
-    for (int i = 0; i < count; i++) {
+    srand(time(0));
+    for (int i = 0; i < count; i++)
+    {
       sum += (rand() % 6) + 1;
     }
 
